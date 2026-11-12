@@ -236,6 +236,85 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .pi2{display:flex;gap:5px}
 .py{background:#111;border:1px solid var(--b);font-size:10px;font-weight:700;color:var(--tdm);letter-spacing:.08em;padding:5px 10px;font-family:'Raleway',sans-serif}
 
+/* CART ITEM THUMBNAIL */
+.ctw{display:flex;align-items:flex-start;gap:12px;flex:1;min-width:0}
+.cthi{width:52px;height:52px;flex-shrink:0;background:#F0EDE6;overflow:hidden;border:1px solid rgba(0,0,0,0.08)}
+.cthi img{width:100%;height:100%;object-fit:contain}
+
+/* CHECKOUT PAGE */
+#page-checkout,#page-confirmed{background:var(--bg);min-height:100vh}
+.ck-hdr{background:#0D0D0D;border-bottom:1px solid var(--b);padding:0 max(24px,env(safe-area-inset-left,0px))}
+.ck-hdr-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.ck-logo{font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--t);display:flex;align-items:center;gap:10px;cursor:pointer}
+.ck-logo-mark{width:28px;height:28px;border:1.5px solid var(--g);display:flex;align-items:center;justify-content:center;color:var(--g)}
+.ck-back{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--tm);display:flex;align-items:center;gap:6px;transition:color .2s;cursor:pointer;text-transform:uppercase}
+.ck-back:hover{color:var(--g)}
+.ck-back svg{width:14px;height:14px}
+.ck-steps{background:#0A0A0A;border-bottom:1px solid var(--b);padding:12px max(24px,env(safe-area-inset-left,0px));display:flex;justify-content:center;gap:0}
+.ck-step{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tdm);padding:0 20px}
+.ck-step.on{color:var(--g)}
+.ck-step-n{width:20px;height:20px;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;border-radius:50%}
+.ck-step-sep{width:40px;height:1px;background:var(--b)}
+.ck-body{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;gap:40px;padding:40px max(24px,env(safe-area-inset-left,0px)) 80px;align-items:start}
+.ck-left,.ck-right{display:flex;flex-direction:column;gap:24px}
+.ck-sec{background:#0D0D0D;border:1px solid var(--b);padding:28px}
+.ck-sec h3{font-size:11px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--t);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--b)}
+.ck-items-list{display:flex;flex-direction:column;gap:0}
+.ck-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--b)}
+.ck-item:last-child{border-bottom:none}
+.ck-iimg{width:60px;height:60px;flex-shrink:0;background:#F0EDE6;overflow:hidden;border:1px solid rgba(0,0,0,0.08)}
+.ck-iimg img{width:100%;height:100%;object-fit:contain}
+.ck-iinfo{flex:1;min-width:0}
+.ck-iname{font-size:13px;font-weight:500;color:var(--t);line-height:1.4}
+.ck-iqty{font-size:12px;color:var(--tm);margin-top:4px}
+.ck-iprice{font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--g);flex-shrink:0}
+.ck-totals{margin-top:4px}
+.ck-trow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:13px;color:var(--tm);border-bottom:1px solid var(--b)}
+.ck-trow:last-child{border-bottom:none}
+.ck-trow.ck-grand{padding-top:14px;margin-top:4px}
+.ck-trow.ck-grand span{font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--t)}
+.ck-trow.ck-grand strong{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:var(--t)}
+.ck-free{color:var(--ok);font-weight:600}
+.ck-form{display:flex;flex-direction:column;gap:12px}
+.ck-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ck-input{background:#0A0A0A;border:1px solid var(--b);color:var(--t);font-family:'DM Sans',sans-serif;font-size:13px;padding:12px 14px;outline:none;transition:border-color .2s;width:100%}
+.ck-input::placeholder{color:var(--tdm)}
+.ck-input:focus{border-color:var(--g)}
+.ck-input:disabled{opacity:.4;cursor:not-allowed}
+.ck-pay-opts{display:flex;gap:8px;margin-bottom:16px}
+.ck-pay{flex:1;border:1px solid var(--b);padding:10px 8px;text-align:center;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tm);cursor:pointer;transition:border-color .2s,color .2s}
+.ck-pay.on{border-color:var(--g);color:var(--g)}
+.ck-soon{font-size:9px;font-weight:700;letter-spacing:.15em;background:rgba(196,164,90,0.15);color:var(--g);padding:2px 6px;text-transform:uppercase;margin-left:8px;vertical-align:middle}
+.ck-pay-note{font-size:11px;color:var(--tdm);margin:12px 0 0;line-height:1.6;padding:12px;background:rgba(196,164,90,0.05);border-left:2px solid var(--g)}
+.ck-submit{background:var(--g);color:#000;font-weight:900;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:18px;width:100%;border:none;cursor:pointer;transition:background .2s;margin-top:4px}
+.ck-submit:hover{background:var(--gl)}
+.ck-secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--tdm);margin-top:12px}
+.ck-secure svg{width:12px;height:12px;color:var(--ok)}
+
+/* CONFIRMATION PAGE */
+.conf-wrap{max-width:620px;margin:0 auto;padding:60px max(24px,env(safe-area-inset-left,0px)) 80px;text-align:center}
+.conf-icon{width:72px;height:72px;border-radius:50%;background:rgba(90,154,120,0.12);border:2px solid var(--ok);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;color:var(--ok)}
+.conf-icon svg{width:32px;height:32px}
+.conf-ref{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tm);margin:8px 0 20px}
+.conf-items{text-align:left;background:#0D0D0D;border:1px solid var(--b);margin:28px 0}
+.conf-item{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--b)}
+.conf-item:last-child{border-bottom:none}
+.conf-total-row{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid var(--b);font-family:'Raleway',sans-serif;font-size:16px;font-weight:900}
+.conf-actions{display:flex;flex-direction:column;gap:12px;align-items:center}
+.conf-btn-pri{background:var(--g);color:#000;font-weight:900;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer;transition:background .2s}
+.conf-btn-pri:hover{background:var(--gl)}
+.conf-btn-sec{font-size:12px;color:var(--tm);cursor:pointer;background:none;border:none;text-decoration:underline}
+
+@media(max-width:760px){
+  .ck-body{grid-template-columns:1fr;padding:24px max(16px,env(safe-area-inset-left,0px)) 60px}
+  .ck-left{order:2}
+  .ck-right{order:1}
+  .ck-pay-opts{flex-direction:column}
+  .ck-step span:not(.ck-step-n){display:none}
+}
+@media(max-width:480px){
+  .ck-row2{grid-template-columns:1fr}
+}
 /* CART DRAWER */
 #cart-overlay{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.65);opacity:0;pointer-events:none;transition:opacity .3s}
 #cart-overlay.open{opacity:1;pointer-events:all}
@@ -360,6 +439,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     <p class="ag-leg">Nicotine is an addictive substance. By entering you agree to our Terms of Service.</p>
   </div>
 </div>
+<div id="page-main">
 
 <!-- PROMO BAR -->
 <div class="promo">
@@ -535,6 +615,8 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   </div>
 </div></footer>
 
+</div>
+
 <!-- CART OVERLAY -->
 <div id="cart-overlay"></div>
 
@@ -551,6 +633,106 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   </div>
   <div id="cart-items" hidden></div>
   <div id="cart-total" hidden></div>
+
+<!-- CHECKOUT PAGE -->
+<div id="page-checkout" hidden>
+  <div class="ck-hdr">
+    <div class="ck-hdr-inner">
+      <div class="ck-logo" onclick="location.hash='';return false">
+        <div class="ck-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        VapeVault
+      </div>
+      <div class="ck-back" onclick="location.hash='';return false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Shop
+      </div>
+    </div>
+  </div>
+  <div class="ck-steps">
+    <div class="ck-step on"><span class="ck-step-n">1</span><span>Your Order</span></div>
+    <div class="ck-step-sep"></div>
+    <div class="ck-step on"><span class="ck-step-n">2</span><span>Details</span></div>
+    <div class="ck-step-sep"></div>
+    <div class="ck-step"><span class="ck-step-n">3</span><span>Payment</span></div>
+  </div>
+  <div class="ck-body">
+    <div class="ck-left">
+      <div class="ck-sec">
+        <h3>Order Summary</h3>
+        <div id="ck-items" class="ck-items-list"></div>
+        <div id="ck-totals" class="ck-totals"></div>
+      </div>
+    </div>
+    <div class="ck-right">
+      <div class="ck-sec">
+        <h3>Contact Information</h3>
+        <div class="ck-form">
+          <input class="ck-input" type="email" placeholder="Email address" id="ck-email">
+          <input class="ck-input" type="tel" placeholder="Phone number (optional)">
+        </div>
+      </div>
+      <div class="ck-sec">
+        <h3>Delivery Address</h3>
+        <div class="ck-form">
+          <div class="ck-row2">
+            <input class="ck-input" type="text" placeholder="First name">
+            <input class="ck-input" type="text" placeholder="Last name">
+          </div>
+          <input class="ck-input" type="text" placeholder="Address line 1">
+          <input class="ck-input" type="text" placeholder="Address line 2 (optional)">
+          <div class="ck-row2">
+            <input class="ck-input" type="text" placeholder="City">
+            <input class="ck-input" type="text" placeholder="Postcode">
+          </div>
+        </div>
+      </div>
+      <div class="ck-sec">
+        <h3>Payment Method <span class="ck-soon">Coming Soon</span></h3>
+        <div class="ck-pay-opts">
+          <div class="ck-pay on" id="ck-pay-card">Card</div>
+          <div class="ck-pay" id="ck-pay-pp">PayPal</div>
+          <div class="ck-pay" id="ck-pay-bank">Bank Transfer</div>
+        </div>
+        <div class="ck-form">
+          <input class="ck-input" type="text" placeholder="Card number" disabled>
+          <div class="ck-row2">
+            <input class="ck-input" type="text" placeholder="MM / YY" disabled>
+            <input class="ck-input" type="text" placeholder="CVV" disabled>
+          </div>
+        </div>
+        <p class="ck-pay-note">Payment processing will be enabled at launch. Place a test order to preview the full experience.</p>
+      </div>
+      <button class="ck-submit" id="ck-submit">Complete Purchase &rarr;</button>
+      <div class="ck-secure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        SSL secured &mdash; your details are safe
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRMED PAGE -->
+<div id="page-confirmed" hidden>
+  <div class="ck-hdr">
+    <div class="ck-hdr-inner">
+      <div class="ck-logo" onclick="location.hash='';return false">
+        <div class="ck-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        VapeVault
+      </div>
+    </div>
+  </div>
+  <div class="conf-wrap">
+    <div class="conf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h1 style="font-size:28px;font-weight:900;letter-spacing:-.01em;color:var(--t)">Order Confirmed!</h1>
+    <p class="conf-ref" id="conf-ref">Order #VV-00000</p>
+    <p style="font-size:13px;color:var(--tm);line-height:1.75;max-width:400px;margin:0 auto">Thank you for your order. A confirmation will be sent to your email once payment is set up at launch.</p>
+    <div id="conf-items" class="conf-items"></div>
+    <div class="conf-actions">
+      <button class="conf-btn-pri" onclick="location.hash='';return false">Continue Shopping</button>
+      <button class="conf-btn-sec" onclick="location.hash='';return false">View all products</button>
+    </div>
+  </div>
+</div>
 </div>
 <script>
 (function(){
@@ -568,7 +750,8 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     var priceEl=card.querySelector('.pp');
     var priceText=priceEl?priceEl.textContent.replace(/[^\d.]/g,''):'0';
     var price=parseFloat(priceText)||0;
-    return{name:(brand?brand+' ':'')+name,price:price,priceStr:'£'+price.toFixed(2)};
+    var imgEl=card.querySelector('.piw img');var imgSrc=imgEl?imgEl.src:'';
+    return{name:(brand?brand+' ':'')+name,price:price,priceStr:'£'+price.toFixed(2),imgSrc:imgSrc};
   }
 
   function updateCount(){
@@ -593,7 +776,8 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
         sum+=item.price*item.qty;
         var d=document.createElement('div');
         d.className='ci';
-        d.innerHTML='<div class="cin"><div class="cit">'+item.name+'</div><div class="ciq"><button class="cqb" data-i="'+i+'" data-d="-1">&#8722;</button><span>'+item.qty+'</span><button class="cqb" data-i="'+i+'" data-d="1">+</button></div></div><div class="cir"><div class="cip">'+item.priceStr+'</div><button class="crm" data-i="'+i+'">&times;</button></div>';
+        var th=item.imgSrc?'<div class="cthi"><img src="'+item.imgSrc+'" alt=""></div>':'';
+        d.innerHTML='<div class="ctw">'+th+'<div class="cin"><div class="cit">'+item.name+'</div><div class="ciq"><button class="cqb" data-i="'+i+'" data-d="-1">&#8722;</button><span>'+item.qty+'</span><button class="cqb" data-i="'+i+'" data-d="1">+</button></div></div></div><div class="cir"><div class="cip">'+item.priceStr+'</div><button class="crm" data-i="'+i+'">&times;</button></div>';
         list.appendChild(d);
       });
       total.innerHTML='<div class="ct-row"><span>Subtotal</span><strong>£'+sum.toFixed(2)+'</strong></div><button class="ct-checkout">Proceed to Checkout &#8594;</button>';
@@ -637,7 +821,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
       e.stopPropagation();
       var p=getProduct(b);
       var ex=cart.find(function(i){return i.name===p.name});
-      if(ex)ex.qty++;else cart.push({name:p.name,price:p.price,priceStr:p.priceStr,qty:1});
+      if(ex)ex.qty++;else cart.push({name:p.name,price:p.price,priceStr:p.priceStr,imgSrc:p.imgSrc||'',qty:1});
       updateCount();renderCart();
       var o=b.textContent;b.textContent='Added';
       b.style.cssText='background:var(--g);color:#000;border-color:var(--g)';
@@ -653,5 +837,85 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
       b.style.color=on?'':'var(--g)';b.style.borderColor=on?'':'var(--bg2)';
     });
   });
+  // â”€â”€ Checkout navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+  function renderCheckout(){
+    var items=document.getElementById('ck-items');
+    var totals=document.getElementById('ck-totals');
+    if(!items)return;
+    if(cart.length===0){
+      items.innerHTML='<p style="color:var(--tm);padding:20px 0;font-size:13px">Your cart is empty. <span style="color:var(--g);cursor:pointer;text-decoration:underline" onclick="location.hash=\'\'">Go back to shop.</span></p>';
+      if(totals)totals.innerHTML='';
+      return;
+    }
+    var sum=0;
+    var html='';
+    cart.forEach(function(item){
+      sum+=item.price*item.qty;
+      html+='<div class="ck-item">'+
+        (item.imgSrc?'<div class="ck-iimg"><img src="'+item.imgSrc+'" alt="'+item.name+'"></div>':'')+
+        '<div class="ck-iinfo"><div class="ck-iname">'+item.name+'</div><div class="ck-iqty">Qty: '+item.qty+'</div></div>'+
+        '<div class="ck-iprice">'+item.priceStr+'</div>'+
+      '</div>';
+    });
+    items.innerHTML=html;
+    var ship=sum>=100?0:4.99;
+    var shipLabel=sum>=100?'<span class="ck-free">FREE</span>':'£4.99';
+    var total=sum+ship;
+    totals.innerHTML=
+      '<div class="ck-trow"><span>Subtotal</span><span>£'+sum.toFixed(2)+'</span></div>'+
+      '<div class="ck-trow"><span>Estimated Shipping</span><span>'+shipLabel+'</span></div>'+
+      '<div class="ck-trow ck-grand"><span>Total</span><strong>£'+total.toFixed(2)+'</strong></div>';
+    // Mirror to confirmed page
+    var ci=document.getElementById('conf-items');
+    if(ci){
+      ci.innerHTML=html+
+        '<div class="conf-total-row"><span>Total</span><span style="color:var(--g)">£'+total.toFixed(2)+'</span></div>';
+    }
+  }
+
+  // Page router
+  function route(){
+    var h=location.hash;
+    var isMain=h!=='#checkout'&&h!=='#confirmed';
+    document.getElementById('page-main').hidden=!isMain;
+    document.getElementById('page-checkout').hidden=h!=='#checkout';
+    document.getElementById('page-confirmed').hidden=h!=='#confirmed';
+    window.scrollTo(0,0);
+    if(h==='#checkout')renderCheckout();
+    if(h==='#confirmed'){
+      var n=Math.floor(Math.random()*90000)+10000;
+      var el=document.getElementById('conf-ref');
+      if(el)el.textContent='Order #VV-'+n;
+    }
+  }
+  window.addEventListener('hashchange',route);
+  route();
+
+  // Proceed to Checkout button (delegated on cart-total)
+  document.getElementById('cart-total').addEventListener('click',function(e){
+    if(e.target.closest('.ct-checkout')){
+      document.getElementById('cart-drawer').classList.remove('open');
+      document.getElementById('cart-overlay').classList.remove('open');
+      location.hash='#checkout';
+    }
+  });
+
+  // Complete Purchase button
+  document.addEventListener('click',function(e){
+    if(e.target.id==='ck-submit'||e.target.closest('#ck-submit')){
+      location.hash='#confirmed';
+    }
+  });
+
+  // Payment tab switching
+  ['ck-pay-card','ck-pay-pp','ck-pay-bank'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.addEventListener('click',function(){
+      document.querySelectorAll('.ck-pay').forEach(function(p){p.classList.remove('on')});
+      el.classList.add('on');
+    });
+  });
+
 })();
 </script>
