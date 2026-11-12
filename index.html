@@ -1000,6 +1000,15 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   window.addEventListener('hashchange',route);
   route();
 
+  // Intercept hash-nav clicks to prevent browser's default scroll-to-top
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href="#all-products"],a[href="#checkout"],a[href="#confirmed"]');
+    if(!a)return;
+    e.preventDefault();
+    var h=a.getAttribute('href');
+    if(location.hash===h){route();}else{location.hash=h;}
+  });
+
   // Proceed to Checkout button (delegated on cart-total)
   document.getElementById('cart-total').addEventListener('click',function(e){
     if(e.target.closest('.ct-checkout')){
