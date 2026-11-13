@@ -1975,7 +1975,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
         var p=getProduct(b);
         var ex=cart.find(function(i){return i.name===p.name;});
         if(ex)ex.qty++;else cart.push({name:p.name,price:p.price,priceStr:p.priceStr,imgSrc:p.imgSrc||'',qty:1});
-        updateCount();saveCart();openCart();
+        updateCount();renderCart();document.getElementById('cart-drawer').classList.add('open');document.getElementById('cart-overlay').classList.add('open');
       });
     });
     grid.querySelectorAll('.wb').forEach(function(b){
@@ -2297,7 +2297,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     var ex=cart.find(function(i){return i.name===nm;});
     if(ex)ex.qty+=CURRENT_QTY;
     else cart.push({name:nm,price:p.price,priceStr:'\u00a3'+p.price.toFixed(2),imgSrc:p.imgSrc||'',qty:CURRENT_QTY});
-    updateCount();saveCart();openCart();
+    updateCount();renderCart();document.getElementById('cart-drawer').classList.add('open');document.getElementById('cart-overlay').classList.add('open');
   }
 
   function switchPdTab(tab,id){
