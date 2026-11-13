@@ -675,6 +675,77 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 @media(max-width:1100px){#ap-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.ap-layout{grid-template-columns:1fr};.ap-sidebar{display:none;position:fixed;inset:0;z-index:500;overflow-y:auto;padding:24px;max-height:none;border-right:none};.ap-sidebar.open{display:block};.ap-mobbtn{display:inline-block};#ap-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){#ap-grid{grid-template-columns:1fr}}
+
+/* ── TRUST BAR ───────────────────────────────────────────── */
+.trust-bar{background:var(--s1);border-bottom:1px solid var(--b);padding:10px 0}
+.trust-items{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:center}
+.trust-item{display:flex;align-items:center;gap:6px;color:var(--t2);font-size:.78rem;white-space:nowrap}
+.trust-item svg{color:var(--g);flex-shrink:0}
+@media(max-width:600px){.trust-items{gap:12px;padding:0 8px}.trust-item{font-size:.72rem}}
+
+/* ── CARD HOVER / CLICKABLE ──────────────────────────────── */
+.pc{cursor:pointer;transition:transform .18s,box-shadow .18s}
+.pc:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.pc:hover .pp strong{color:var(--g)}
+
+/* ── PRODUCT DETAIL PAGE ─────────────────────────────────── */
+.pd-page{max-width:var(--mw);margin:0 auto;padding:40px var(--pw) 80px}
+.pd-bread{font-size:.8rem;color:var(--t2);margin-bottom:28px;display:flex;align-items:center;gap:6px}
+.pd-bread a{color:var(--t2);text-decoration:none;transition:color .15s}.pd-bread a:hover{color:var(--g)}
+.pd-bread span{color:var(--b2)}
+.pd-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.pd-img-wrap{position:sticky;top:80px}
+.pd-img-main{aspect-ratio:1/1.1;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pd-img-main img{width:100%;height:100%;object-fit:contain;padding:24px}
+.pd-brand-lbl{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
+.pd-name{font-size:1.6rem;font-weight:800;line-height:1.25;margin-bottom:10px}
+.pd-stars-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.pd-stars-row .st{color:#f5a623;font-size:.95rem;letter-spacing:.05em}
+.pd-stars-row .rc{font-size:.82rem;color:var(--t2);cursor:pointer;text-decoration:underline}
+.pd-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.pd-price{font-size:2.1rem;font-weight:900;line-height:1}
+.pd-price sup{font-size:1rem;vertical-align:top;margin-top:.4rem}
+.pd-price-was{font-size:1rem;color:var(--t2);text-decoration:line-through}
+.pd-meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.pd-instock{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:600;color:#22c55e}
+.pd-puffs-pill{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;padding:4px 10px;background:var(--s1);border:1px solid var(--b);border-radius:3px;color:var(--t2);letter-spacing:.05em;text-transform:uppercase}
+.pd-flav-hdr{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.pd-flav-sel{font-weight:800;color:var(--t);letter-spacing:0;text-transform:none;font-size:.88rem}
+.pd-flavs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.pd-flav{padding:8px 13px;border:1.5px solid var(--b);border-radius:3px;font-size:.83rem;cursor:pointer;background:var(--bg);color:var(--t);transition:all .15s;user-select:none}
+.pd-flav:hover{border-color:var(--g);color:var(--g)}
+.pd-flav.sel{border-color:var(--g);background:var(--g);color:#000;font-weight:700}
+.pd-flav-req{animation:pd-shake .4s ease}
+@keyframes pd-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.pd-qty-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.pd-qty-lbl{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t2)}
+.pd-qty{display:flex;align-items:center;border:1.5px solid var(--b);border-radius:3px;overflow:hidden;height:44px}
+.pd-qty button{width:44px;background:var(--s1);border:none;color:var(--t);font-size:1.2rem;cursor:pointer;height:100%;display:flex;align-items:center;justify-content:center;transition:background .15s}.pd-qty button:hover{background:var(--b)}
+.pd-qty input{width:52px;text-align:center;background:transparent;border:none;border-left:1.5px solid var(--b);border-right:1.5px solid var(--b);color:var(--t);font-size:.95rem;font-weight:700;height:100%;outline:none}
+.pd-atc{width:100%;padding:16px;background:var(--g);color:#000;border:none;border-radius:3px;font-size:1rem;font-weight:800;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:9px;transition:opacity .15s;position:relative}.pd-atc:hover{opacity:.88}
+.pd-atc-price{font-size:.9rem;opacity:.7;margin-left:4px}
+.pd-wl-btn{width:100%;padding:13px;background:transparent;color:var(--t);border:1.5px solid var(--b);border-radius:3px;font-size:.9rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:all .15s;margin-bottom:22px}.pd-wl-btn:hover{border-color:var(--g);color:var(--g)}.pd-wl-btn.active{border-color:#e53935;color:#e53935}
+.pd-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px 0;border-top:1px solid var(--b);border-bottom:1px solid var(--b);margin-bottom:22px}
+.pd-trust-item{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center}
+.pd-trust-item svg{color:var(--g)}
+.pd-trust-item strong{font-size:.8rem;display:block}
+.pd-trust-item small{font-size:.72rem;color:var(--t2)}
+.pd-disc{font-size:.78rem;color:var(--t2);line-height:1.6;padding-bottom:18px;border-bottom:1px solid var(--b)}
+.pd-tabs{display:flex;border-bottom:2px solid var(--b);margin-top:52px;margin-bottom:24px}
+.pd-tab{padding:12px 22px;font-size:.82rem;font-weight:700;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;color:var(--t2);letter-spacing:.08em;text-transform:uppercase;transition:color .15s}.pd-tab.on{color:var(--g);border-bottom-color:var(--g)}
+.pd-tc{display:none}.pd-tc.on{display:block}
+.pd-feats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;padding:0}
+.pd-feats li{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--t2)}.pd-feats li::before{content:'✓';color:var(--g);font-weight:800;font-size:1rem}
+.pd-desc-text{line-height:1.8;color:var(--t2);max-width:700px;font-size:.95rem}
+.pd-rev-summary{display:flex;align-items:center;gap:32px;padding:20px 0 28px}
+.pd-rev-avg{text-align:center}.pd-rev-avg .avg-num{font-size:3rem;font-weight:900;line-height:1}.pd-rev-avg .avg-stars{color:#f5a623;font-size:1.1rem}.pd-rev-avg small{font-size:.78rem;color:var(--t2)}
+.pd-rev-bars{flex:1;max-width:360px}
+.pd-rev-bar{display:flex;align-items:center;gap:8px;font-size:.8rem;margin-bottom:6px}.pd-rev-bar-track{flex:1;height:7px;background:var(--b);border-radius:4px;overflow:hidden}.pd-rev-bar-fill{height:100%;background:#f5a623;border-radius:4px}
+.pd-related{margin-top:52px;padding-top:28px;border-top:1px solid var(--b)}
+.pd-related-ttl{font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px}
+.pd-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b)}
+@media(max-width:960px){.pd-layout{grid-template-columns:1fr}.pd-img-wrap{position:static}.pd-related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.pd-trust{grid-template-columns:1fr;gap:14px}.pd-feats{grid-template-columns:1fr}.pd-related-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 
 <!-- AGE GATE -->
@@ -721,6 +792,16 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     <li><a href="#wholesale">Wholesale</a></li>
   </ul></div></nav>
 </header>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="w"><div class="trust-items">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="1" y="3" width="22" height="16" rx="2"/><path d="M1 9h22"/></svg>Free UK delivery on orders over £30</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Secure &amp; encrypted payment</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>18+ age verified</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.8/5 from 2,000+ reviews</div>
+  </div></div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1069,68 +1150,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   </div>
 </div>
 
-<div id="page-product" hidden>
-  <div class="ck-hdr">
-    <div class="ck-hdr-inner">
-      <div class="ck-logo" onclick="history.back()">
-        <div class="ck-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        VapeVault
-      </div>
-      <div class="ck-back" onclick="history.back()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        Back
-      </div>
-    </div>
-  </div>
-  <div class="pd-wrap">
-    <div class="pd-grid">
-      <div class="pd-imgbox"><img id="pd-img" src="" alt="Product"></div>
-      <div class="pd-info-col">
-        <div class="pd-brand" id="pd-brand">Brand</div>
-        <h1 class="pd-name" id="pd-name">Product Name</h1>
-        <div id="pd-badge-wrap"></div>
-        <div class="pd-stars" id="pd-stars">★★★★★</div>
-        <div class="pd-rev-ct" id="pd-revct">0 reviews</div>
-        <div class="pd-price" id="pd-price">£0.00</div>
-        <div class="pd-price-old" id="pd-price-old" style="display:none"></div>
-        <div class="pd-qty-row">
-          <div class="pd-qty">
-            <button onclick="var s=document.getElementById('pd-qty-val');var v=parseInt(s.textContent)||1;if(v>1)s.textContent=v-1">−</button>
-            <span id="pd-qty-val">1</span>
-            <button onclick="var s=document.getElementById('pd-qty-val');var v=parseInt(s.textContent)||1;s.textContent=v+1">+</button>
-          </div>
-          <button class="pd-add" id="pd-add-btn">Add to Cart</button>
-        </div>
-        <div style="display:flex;gap:12px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--b);font-size:12px;color:var(--tm)">
-          <span>✓ &nbsp;In stock</span>
-          <span>✓ &nbsp;Same-day dispatch before 2pm</span>
-          <span>✓ &nbsp;Free delivery over £50</span>
-        </div>
-        <div class="pd-tabs">
-          <button class="pd-tab on" data-tab="desc">Description</button>
-          <button class="pd-tab" data-tab="specs">Details</button>
-          <button class="pd-tab" data-tab="delivery">Delivery</button>
-        </div>
-        <div class="pd-panel on" id="pd-panel-desc">
-          <p id="pd-desc-text">Premium quality product from one of the UK's leading vape brands. TPD compliant and rigorously tested to meet UK safety standards.</p>
-        </div>
-        <div class="pd-panel" id="pd-panel-specs">
-          <div class="pd-info-row"><span class="pd-info-label">Brand</span><span class="pd-info-val" id="pd-spec-brand">—</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">TPD Compliant</span><span class="pd-info-val">Yes</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">Nicotine Strength</span><span class="pd-info-val">10mg / 20mg</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">Size</span><span class="pd-info-val">10ml</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">Country of Origin</span><span class="pd-info-val">UK</span></div>
-        </div>
-        <div class="pd-panel" id="pd-panel-delivery">
-          <div class="pd-info-row"><span class="pd-info-label">Standard Delivery</span><span class="pd-info-val">2–3 days · Free over £50</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">Express Delivery</span><span class="pd-info-val">Next day · £5.99</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">Same Day Dispatch</span><span class="pd-info-val">Order before 2pm</span></div>
-          <div class="pd-info-row"><span class="pd-info-label">Returns</span><span class="pd-info-val">30 days · unopened only</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="page-product" hidden></div>
 
 <!-- ══ BLOG ════════════════════════════════════════════════════ -->
 <div id="page-blog" hidden>
@@ -1881,7 +1901,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
         var brand=card.dataset.brand||(card.querySelector('.pbr')||{}).textContent||'';
         var type=card.dataset.type||sectionMap[cls];
         var puffs=parseInt(card.dataset.puffs)||0;
-        var price=parseFloat(card.dataset.price)||0;
+        var ppEl=card.querySelector('.pp');var ppTxt=ppEl?ppEl.textContent.replace(/[£,]/g,'').trim().split(/\s+/)[0]:'0';var price=parseFloat(card.dataset.price)||parseFloat(ppTxt)||0;
         PRODUCTS.push({cat:sectionMap[cls],brand:brand.trim(),type:type,puffs:puffs,price:price,html:card.outerHTML});
       });
     });
@@ -2061,7 +2081,8 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     window.scrollTo(0,0);
     if(h==='#checkout')renderCheckout();
     if(h==='#all-products'){buildBrandFilter();renderProducts();}
-    if(h==='#confirmed'){
+    if(h==='#product')showProduct();
+  if(h==='#confirmed'){
       var n=Math.floor(Math.random()*90000)+10000;
       var el=document.getElementById('conf-ref');
       if(el)el.textContent='Order #VV-'+n;
@@ -2121,7 +2142,185 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 
 
   // Expose filter functions to global scope (called from inline HTML onchange/onclick)
-  window.filterChanged=filterChanged;
+  
+  /* ── PRODUCT DETAIL ───────────────────────────────────── */
+  var CURRENT_PRODUCT=null,CURRENT_FLAVOUR=null,CURRENT_QTY=1;
+
+  var BRAND_FLAVORS={
+    'Hayati':['Blueberry Ice','Cherry Ice','Mango Ice','Strawberry Watermelon','Grape','Peach Ice','Watermelon Ice','Cola Ice','Spearmint','Pink Lemonade','Lychee Ice','Pineapple Ice'],
+    'Al Fakher':['Double Apple','Blueberry Mint','Strawberry Ice','Lemon Ice','Watermelon Ice','Cherry Ice','Mango Ice','Peach Ice','Cola Ice','Grape Ice'],
+    'IVG':['Blueberry Raspberry','Cherry Ice','Fizzy Cherry','Strawberry Lemonade','Blackcurrant Menthol','Blue Razz','Apple Peach','Mango Ice','Lemon Lime'],
+    'Lost Mary':['Blueberry Sour Raspberry','Cherry Peach Lemonade','Mango Passion Fruit','Pineapple Ice','Strawberry Mango','Triple Mango','Watermelon Ice','Cherry Cola','Blueberry Ice'],
+    'Pyne Pod':['Blueberry Ice','Mango Ice','Cherry Ice','Strawberry Raspberry','Peach Ice','Watermelon Ice','Grape Ice','Blue Razz'],
+    'Relx':['Tangy Purple','Fresh Red','Ludou Ice','Classic Mint','Classic Tobacco','Mango Lychee','Fruit Tea','Jasmine Green Tea'],
+    'Crystal Prime':['Blueberry Ice','Cherry Ice','Grape','Watermelon','Strawberry Kiwi','Blue Razz','Lemon','Peach','Passion Fruit','Apple Peach','Mango Ice'],
+    'Crystal Pro':['Blueberry Ice','Cherry Ice','Grape','Watermelon','Strawberry Kiwi','Blue Razz','Lemon','Peach','Passion Fruit'],
+    'Crystal Clear':['Blueberry Ice','Cherry Ice','Peach Ice','Strawberry Kiwi','Watermelon Ice','Grape'],
+    'Elf Bar':['Blueberry','Cherry Ice','Grape','Mango','Peach Ice','Pink Lemonade','Strawberry Ice','Watermelon','Blue Razz','Spearmint','Lemon Lime'],
+    'Bar Juice':['Blueberry Ice','Cherry','Cola Ice','Grape','Mango Ice','Peach','Pink Lemonade','Raspberry','Strawberry'],
+    'Elux':['Blueberry Raspberry','Cherry Ice','Grape Ice','Mango Ice','Strawberry Ice','Watermelon Ice','Blue Razz Ice'],
+    'SKE Crystal':['Blueberry Ice','Cherry Ice','Fizzy Cherry','Grape','Strawberry Kiwi','Peach Blueberry','Lemon Lime'],
+    'IVG Salt':['Blueberry Raspberry','Cherry Ice','Fizzy Cherry','Strawberry Lemonade','Blackcurrant Menthol'],
+    'Vaporesso':['Menthol','Tropical Fruit','Mango Passion','Spearmint','Blue Razz'],
+    'OXVA':['Tropical Fruits','Blue Razz Ice','Strawberry Ice','Watermelon Ice','Peach Ice'],
+    'Riot Squad':['Original Berry','Tropical Paradise','Blue Razz Ice','Raspberry Cherry Fizz','Lemon Grape'],
+    'Pod Salt':['Original','Mango Ice','Blue Razz','Spearmint','Passion Fruit Ice'],
+    'Doozy Vape':['Apple & Mango','Blackcurrant Ice','Blueberry Lemon','Cherry Drops','Strawberry Laces'],
+    'Ultimate Salts':['Blue Raspberry','Mango','Strawberry','Tropical','Spearmint'],
+    'Aspire':['Menthol','Blueberry Ice','Strawberry Watermelon'],
+    'Uwell':['Tropical Mango','Blue Razz Ice','Strawberry'],
+    'Geek Vape':['Tropical Mango','Strawberry Ice','Blueberry'],
+    'Voopoo':['Blueberry Ice','Strawberry Mango','Tropical Fruits']
+  };
+
+  var BRAND_BG={
+    'Hayati':'linear-gradient(145deg,#1a0533,#4a0e8f)',
+    'Al Fakher':'linear-gradient(145deg,#2d1a00,#5a3800)',
+    'IVG':'linear-gradient(145deg,#0d1b2a,#1e3a5f)',
+    'Lost Mary':'linear-gradient(145deg,#2d0a2e,#880e4f)',
+    'Pyne Pod':'linear-gradient(145deg,#0d2010,#1b5e20)',
+    'Relx':'linear-gradient(145deg,#1a1a1a,#333333)',
+    'Crystal Prime':'linear-gradient(145deg,#001040,#0d2080)',
+    'Crystal Pro':'linear-gradient(145deg,#002040,#004060)',
+    'Elf Bar':'linear-gradient(145deg,#002440,#003d6e)',
+    'default':'linear-gradient(145deg,#1c1c1c,#2d2d2d)'
+  };
+
+  function openProduct(card){
+    var brand=(card.dataset.brand||(card.querySelector('.pbr')||{}).textContent||'').trim();
+    var name=((card.querySelector('.pn')||{}).textContent||'').trim();
+    var puffs=parseInt(card.dataset.puffs)||0;
+    var ppEl=card.querySelector('.pp');
+    var ppTxt=ppEl?ppEl.textContent.replace(/[£,]/g,'').trim().split(/\s+/)[0]:'0';
+    var price=parseFloat(card.dataset.price)||parseFloat(ppTxt)||0;
+    var imgEl=card.querySelector('.piw img');
+    var imgSrc=imgEl?imgEl.src:'';
+    var piwEl=card.querySelector('.piw');
+    var gradient=(piwEl&&piwEl.style.background)||BRAND_BG[brand]||BRAND_BG['default'];
+    var starsEl=card.querySelector('.ps');
+    var stars=starsEl?starsEl.textContent.replace(/\(.*?\)/,'').trim():'★★★★★';
+    var reviews=starsEl?((starsEl.textContent.match(/\(([0-9,]+)\)/)||['','0'])[1]):'0';
+    var type=card.dataset.type||'';
+    CURRENT_PRODUCT={brand:brand,name:name,puffs:puffs,price:price,imgSrc:imgSrc,gradient:gradient,stars:stars,reviews:reviews,type:type};
+    CURRENT_FLAVOUR=null;CURRENT_QTY=1;
+    location.hash='#product';
+  }
+
+  function _pdFeats(p){
+    var f=[];
+    if(p.puffs>0)f.push(p.puffs.toLocaleString()+' puffs per device');
+    if(p.type==='Disposable Vapes'){f.push('Pre-filled, ready to use');f.push('Rechargeable battery');f.push('TPD & UK compliant');f.push('20mg nicotine salt');f.push('Mesh coil technology');f.push('Draw-activated, no buttons');f.push('Multiple flavours available');f.push('2ml pod — legal UK spec');}
+    else if(p.type==='Nic Salts'){f.push('Smooth nicotine salt');f.push('10ml e-liquid bottle');f.push('20mg nicotine strength');f.push('TPD compliant');f.push('Fast nicotine delivery');f.push('Multiple flavours available');}
+    else{f.push('Replacement pod cartridge');f.push('Leak-resistant design');f.push('Easy no-mess refill');f.push('Multiple coil options');f.push('Multiple flavours available');}
+    return f.map(function(x){return'<li>'+x+'</li>';}).join('');
+  }
+
+  function _pdDesc(p){
+    if(p.type==='Disposable Vapes'){return p.name+' by '+p.brand+' is a premium prefilled pod kit built for the UK market. '+(p.puffs>0?'With '+p.puffs.toLocaleString()+' puffs per device, it':'It')+' delivers consistent, satisfying flavour throughout. Featuring mesh coil technology for enhanced vapour production and a rechargeable battery to get every last puff — this device is TPD compliant and comes in a wide range of carefully crafted flavours. Perfect for switching from cigarettes or upgrading your current vape.';}
+    if(p.type==='Nic Salts'){return p.name+' by '+p.brand+' is a premium nicotine salt e-liquid crafted for a smooth, satisfying experience. Available in 20mg strength, nic salts deliver a faster nicotine hit than freebase e-liquids — perfect for ex-smokers looking for a cigarette-like satisfaction. Each 10ml bottle is TPD compliant and available in a wide range of bold, authentic flavours.';}
+    return p.name+' by '+p.brand+' — premium replacement pods for your compatible device. These high-quality pods feature superior coil technology for outstanding flavour and vapour production. Easy to install with a no-mess pod replacement system. Compatible with all standard '+p.brand+' devices.';
+  }
+
+  function _pdRelated(p){
+    collectProducts();
+    var rel=PRODUCTS.filter(function(pr){return(pr.brand===p.brand||pr.type===p.type)&&pr.name!==p.name;}).slice(0,4);
+    if(!rel.length)return'';
+    return'<div class="pd-related"><div class="pd-related-ttl">You May Also Like</div><div class="pd-related-grid">'+rel.map(function(pr){return pr.html;}).join('')+'</div></div>';
+  }
+
+  function showProduct(){
+    var p=CURRENT_PRODUCT;
+    if(!p){location.hash='#all-products';return;}
+    var flavs=BRAND_FLAVORS[p.brand]||['Original'];
+    var grad=p.gradient||BRAND_BG['default'];
+    var imgHtml=p.imgSrc?'<img src="'+p.imgSrc+'" alt="'+p.name+'" style="width:100%;height:100%;object-fit:contain;padding:16px">':'<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:24px;gap:10px"><div class="vphi-brand">'+p.brand.toUpperCase()+'</div><div class="vphi-name">'+p.name+'</div>'+(p.puffs>0?'<div class="vphi-puffs">'+p.puffs.toLocaleString()+' PUFFS</div>':'')+' </div>';
+    var pArr=p.price.toFixed(2).split('.');
+    var puffsHtml=p.puffs>0?'<span class="pd-puffs-pill">&#128168; '+p.puffs.toLocaleString()+' Puffs</span>':'';
+    var flavHtml=flavs.map(function(f){return'<button class="pd-flav" onclick="selectFlavour(this,\''+f.replace(/'/g,"\\'")+'\')" type="button">'+f+'</button>';}).join('');
+    var page=document.getElementById('page-product');
+    page.innerHTML='<div class="pd-page">'
+      +'<nav class="pd-bread"><a href="#" onclick="location.hash=\'\';return false">Home</a><span>/</span><a href="#all-products">All Products</a><span>/</span>'+p.name+'</nav>'
+      +'<div class="pd-layout">'
+        +'<div class="pd-img-wrap"><div class="pd-img-main" style="background:'+grad+'">'+imgHtml+'</div></div>'
+        +'<div class="pd-info">'
+          +'<div class="pd-brand-lbl">'+p.brand+'</div>'
+          +'<h1 class="pd-name">'+p.name+'</h1>'
+          +'<div class="pd-stars-row"><span class="st">'+p.stars+'</span><span class="rc">'+p.reviews+' reviews</span></div>'
+          +'<div class="pd-price-row"><div class="pd-price"><sup>£</sup>'+pArr[0]+'<span style="font-size:1.2rem">.'+pArr[1]+'</span></div></div>'
+          +'<div class="pd-meta-row"><span class="pd-instock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> In Stock — ready to dispatch</span>'+puffsHtml+'</div>'
+          +'<div class="pd-flav-hdr">Choose Flavour <span class="pd-flav-sel" id="pd-sel-flav"></span></div>'
+          +'<div class="pd-flavs" id="pd-flavs">'+flavHtml+'</div>'
+          +'<div class="pd-qty-row"><span class="pd-qty-lbl">Qty</span><div class="pd-qty"><button onclick="changeQty(-1)" type="button">&#8722;</button><input type="number" id="pd-qty" value="1" min="1" max="99" readonly><button onclick="changeQty(1)" type="button">+</button></div></div>'
+          +'<button class="pd-atc" id="pd-atc-btn" onclick="addToCartPDP()" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Add to Cart<span class="pd-atc-price">&#8212; &#163;'+p.price.toFixed(2)+'</span></button>'
+          +'<button class="pd-wl-btn" id="pd-wl-btn" onclick="this.classList.toggle(\'active\');this.textContent=this.classList.contains(\'active\')?\'&#9829; Saved to Wishlist\':\'&#9825; Add to Wishlist\'" type="button">&#9825; Add to Wishlist</button>'
+          +'<div class="pd-trust">'
+            +'<div class="pd-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><strong>Secure Checkout</strong><small>SSL encrypted</small></div>'
+            +'<div class="pd-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="1" y="3" width="22" height="16" rx="2"/><path d="M1 9h22"/></svg><strong>Fast Dispatch</strong><small>Same day orders</small></div>'
+            +'<div class="pd-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><strong>18+ Verified</strong><small>Age-checked site</small></div>'
+          +'</div>'
+          +'<p class="pd-disc">All products are TPD compliant and legally sold in the UK. Nicotine is an addictive substance. By purchasing you confirm you are aged 18 or over.</p>'
+        +'</div>'
+      +'</div>'
+      +'<div class="pd-tabs"><div class="pd-tab on" onclick="switchPdTab(this,\'pd-tc1\')">Description</div><div class="pd-tab" onclick="switchPdTab(this,\'pd-tc2\')">Key Features</div><div class="pd-tab" onclick="switchPdTab(this,\'pd-tc3\')">Reviews ('+p.reviews+')</div></div>'
+      +'<div id="pd-tc1" class="pd-tc on"><p class="pd-desc-text">'+_pdDesc(p)+'</p></div>'
+      +'<div id="pd-tc2" class="pd-tc"><ul class="pd-feats">'+_pdFeats(p)+'</ul></div>'
+      +'<div id="pd-tc3" class="pd-tc"><div class="pd-rev-summary"><div class="pd-rev-avg"><div class="avg-num">4.8</div><div class="avg-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><small>'+p.reviews+' reviews</small></div><div class="pd-rev-bars"><div class="pd-rev-bar"><span>5&#9733;</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:76%"></div></div><span style="color:var(--t2)">76%</span></div><div class="pd-rev-bar"><span>4&#9733;</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:16%"></div></div><span style="color:var(--t2)">16%</span></div><div class="pd-rev-bar"><span>3&#9733;</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:5%"></div></div><span style="color:var(--t2)">5%</span></div><div class="pd-rev-bar"><span>2&#9733;</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:2%"></div></div><span style="color:var(--t2)">2%</span></div><div class="pd-rev-bar"><span>1&#9733;</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:1%"></div></div><span style="color:var(--t2)">1%</span></div></div></div></div>'
+      +_pdRelated(p)
+      +'</div>';
+    window.scrollTo(0,0);
+  }
+
+  function selectFlavour(btn,flavour){
+    document.querySelectorAll('.pd-flav').forEach(function(b){b.classList.remove('sel');});
+    btn.classList.add('sel');
+    CURRENT_FLAVOUR=flavour;
+    var el=document.getElementById('pd-sel-flav');
+    if(el)el.textContent='— '+flavour;
+  }
+
+  function changeQty(d){
+    var inp=document.getElementById('pd-qty');
+    if(!inp)return;
+    var v=Math.max(1,Math.min(99,parseInt(inp.value)+d));
+    inp.value=v;CURRENT_QTY=v;
+  }
+
+  function addToCartPDP(){
+    if(!CURRENT_PRODUCT)return;
+    if(!CURRENT_FLAVOUR){
+      var fs=document.getElementById('pd-flavs');
+      if(fs){fs.classList.add('pd-flav-req');setTimeout(function(){fs.classList.remove('pd-flav-req');},500);}
+      return;
+    }
+    var p=CURRENT_PRODUCT;
+    var nm=p.name+' \u2014 '+CURRENT_FLAVOUR;
+    var ex=cart.find(function(i){return i.name===nm;});
+    if(ex)ex.qty+=CURRENT_QTY;
+    else cart.push({name:nm,price:p.price,priceStr:'\u00a3'+p.price.toFixed(2),imgSrc:p.imgSrc||'',qty:CURRENT_QTY});
+    updateCount();saveCart();openCart();
+  }
+
+  function switchPdTab(tab,id){
+    document.querySelectorAll('.pd-tab').forEach(function(t){t.classList.remove('on');});
+    document.querySelectorAll('.pd-tc').forEach(function(c){c.classList.remove('on');});
+    tab.classList.add('on');
+    var c=document.getElementById(id);if(c)c.classList.add('on');
+  }
+
+  // Card click → product page
+  document.addEventListener('click',function(e){
+    var card=e.target.closest('.pc');
+    if(!card)return;
+    if(e.target.closest('.bc')||e.target.closest('.wb'))return;
+    openProduct(card);
+  });
+window.filterChanged=filterChanged;
+  window.selectFlavour=selectFlavour;
+  window.changeQty=changeQty;
+  window.addToCartPDP=addToCartPDP;
+  window.switchPdTab=switchPdTab;
+  window.openProduct=openProduct;
+  window.showProduct=showProduct;
   window.clearAllFilters=clearAllFilters;
   window.removeBrandFilter=removeBrandFilter;
   window.removeTypeFilter=removeTypeFilter;
