@@ -625,6 +625,56 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   .ip-wrap{padding:28px max(16px,env(safe-area-inset-left,0px)) 60px}
   .pd-wrap{padding:28px max(16px,env(safe-area-inset-left,0px)) 60px}
 }
+/* ── BRAND PLACEHOLDER CARDS ─────────────────────────── */
+.vphi{text-align:center;padding:28px 20px;width:100%}
+.vphi-brand{font-size:14px;font-weight:900;letter-spacing:.22em;color:#C4A45A;margin-bottom:8px;text-transform:uppercase}
+.vphi-name{font-size:11px;color:rgba(255,255,255,.8);letter-spacing:.03em;line-height:1.4}
+.vphi-puffs{font-size:9px;color:rgba(196,164,90,.7);letter-spacing:.18em;text-transform:uppercase;margin-top:10px;border:1px solid rgba(196,164,90,.3);padding:3px 10px;display:inline-block}
+/* ── BIG PUFFS SECTION ───────────────────────────────── */
+.sbig{background:var(--s1);padding:72px 0;border-bottom:1px solid var(--b)}
+.sbig .pc{background:var(--bg)}
+.sbig .pc:hover{background:#0E0E0E}
+/* ── NAV DROPDOWN ────────────────────────────────────── */
+.nl-brand{position:relative}
+.nl-brand:hover .nbm,.nbm:hover{opacity:1;pointer-events:all;transform:translateY(0)}
+.nbm{opacity:0;pointer-events:none;transform:translateY(-8px);position:absolute;top:calc(100% + 8px);left:0;background:var(--bg);border:1px solid var(--b);padding:12px;min-width:220px;z-index:300;transition:opacity .18s,transform .18s;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.nbm a{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--tm);padding:8px 10px;display:block;border:1px solid transparent;transition:border-color .15s,color .15s;white-space:nowrap}
+.nbm a:hover{border-color:var(--b);color:var(--g)}
+/* ── ALL-PRODUCTS SIDEBAR LAYOUT ─────────────────────── */
+.ap-layout{display:grid;grid-template-columns:230px 1fr;gap:0;align-items:start}
+.ap-sidebar{position:sticky;top:72px;border-right:1px solid var(--b);padding:24px;background:var(--bg);max-height:calc(100vh - 80px);overflow-y:auto}
+.ap-sbar-hdr{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--t);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between}
+.ap-fg{margin-bottom:24px;border-bottom:1px solid var(--b);padding-bottom:20px}
+.ap-fg:last-child{border-bottom:none;margin-bottom:0}
+.ap-fg-lbl{font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--tm);margin-bottom:12px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none}
+.ap-fg-lbl svg{transition:transform .2s;width:12px;height:12px;flex-shrink:0;stroke:var(--tm)}
+.ap-fg.closed .ap-fg-lbl svg{transform:rotate(-90deg)}
+.ap-fg.closed .ap-fopts{display:none}
+.ap-fopts{display:flex;flex-direction:column;gap:8px}
+.ap-chk{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:12px;color:var(--tm);transition:color .2s;padding:1px 0;line-height:1.4}
+.ap-chk:hover{color:var(--t)}
+.ap-chk input[type=checkbox]{width:14px;height:14px;accent-color:var(--g);flex-shrink:0;cursor:pointer;margin:0}
+.ap-chk span{flex:1}
+.ap-chk em{font-style:normal;font-size:10px;color:var(--tdm)}
+.ap-prange{display:flex;flex-direction:column;gap:8px}
+.ap-pvals{display:flex;justify-content:space-between;font-size:12px;color:var(--tm)}
+.ap-rng{width:100%;accent-color:var(--g);cursor:pointer;display:block}
+.ap-clear-all{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--g);background:none;border:1px solid rgba(196,164,90,.3);cursor:pointer;padding:7px 14px;display:block;width:100%;text-align:center;transition:border-color .2s;margin-bottom:20px}
+.ap-clear-all:hover{border-color:var(--g)}
+.ap-topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--b);flex-wrap:wrap;gap:10px}
+.ap-sort-row{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--tm)}
+.ap-sort{background:var(--bg);border:1px solid var(--b);color:var(--t);font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;padding:7px 12px;cursor:pointer;min-width:160px}
+.ap-mobbtn{display:none;background:var(--g);color:#000;border:none;font-family:'Raleway',sans-serif;font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;padding:9px 18px;cursor:pointer}
+.ap-active-tags{display:flex;flex-wrap:wrap;gap:6px;padding:12px 24px;border-bottom:1px solid var(--b);min-height:0}
+.ap-active-tags:empty{display:none}
+.ap-tag{display:flex;align-items:center;gap:6px;background:rgba(196,164,90,.12);border:1px solid rgba(196,164,90,.3);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g);padding:4px 10px;cursor:pointer}
+.ap-tag:hover{background:rgba(196,164,90,.2)}
+.ap-main{padding:24px}
+#ap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b)}
+#ap-grid .pc{background:var(--card)}
+@media(max-width:1100px){#ap-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.ap-layout{grid-template-columns:1fr};.ap-sidebar{display:none;position:fixed;inset:0;z-index:500;overflow-y:auto;padding:24px;max-height:none;border-right:none};.ap-sidebar.open{display:block};.ap-mobbtn{display:inline-block};#ap-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){#ap-grid{grid-template-columns:1fr}}
 </style>
 
 <!-- AGE GATE -->
@@ -662,9 +712,13 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     </div>
   </div>
   <nav class="nav"><div class="w"><ul class="nl">
-    <li><a href="#" class="on">Home</a></li><li><a href="#all-products">Prefilled Vapes</a></li><li><a href="#all-products">Pre-Filled Pods</a></li>
-    <li><a href="#all-products">Nic Salts</a></li><li><a href="#all-products">E-Liquids</a></li><li><a href="#all-products">Vape Kits</a></li>
-    <li><a href="#all-products">Replacement Pods</a></li><li><a href="#all-products">Accessories</a></li><li><a href="#wholesale">Wholesale</a></li>
+    <li><a href="#" class="on">Home</a></li>
+    <li><a href="#all-products">Prefilled Vapes</a></li>
+    <li class="nl-brand"><a href="#all-products">Shop by Brand <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:3px"><path d="M6 9l6 6 6-6"/></svg></a><div class="nbm"><a href="#all-products">Hayati</a><a href="#all-products">Elf Bar</a><a href="#all-products">Lost Mary</a><a href="#all-products">IVG</a><a href="#all-products">Relx</a><a href="#all-products">Al Fakher</a><a href="#all-products">Crystal Pro</a><a href="#all-products">Crystal Prime</a><a href="#all-products">Pyne Pod</a><a href="#all-products">Vaporesso</a><a href="#all-products">OXVA</a><a href="#all-products">Elux</a></div></li>
+    <li><a href="#all-products">Nic Salts</a></li>
+    <li><a href="#all-products">Pod Kits</a></li>
+    <li><a href="#all-products">Replacement Pods</a></li>
+    <li><a href="#wholesale">Wholesale</a></li>
   </ul></div></nav>
 </header>
 
@@ -782,6 +836,27 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   </div>
 </section>
 
+
+<!-- BIG PUFFS -->
+<section class="sbig" id="bigpuffs">
+  <div class="w">
+    <div class="sh"><div><div class="sl">Disposable Vapes</div><div class="st">Big Puffs <strong>Prefilled Pods</strong></div><p class="ss">10K+ puffs, rechargeable, TPD-compliant — the new generation of UK vaping</p></div><a href="#all-products" class="bl">View All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a></div>
+    <div class="pg">
+<div class="pc" data-brand="Hayati" data-type="Disposable Vapes" data-puffs="6000" data-price="41.99"><div class="piw" style="background:linear-gradient(145deg,#1a0533,#4a0e8f)"><div class="vphi"><div class="vphi-brand">HAYATI</div><div class="vphi-name">Pro Max+ 6000 — Box of 5</div><div class="vphi-puffs">6,000 PUFFS</div></div><span class="bdg bhot">Best Seller</span><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Hayati</div><div class="pn">Pro Max+ 6000 — Box of 5</div><div class="ps">★★★★★<span>(1,247)</span></div><div class="pf"><div class="pp"><strong>£41</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Hayati" data-type="Disposable Vapes" data-puffs="15000" data-price="71.99"><div class="piw" style="background:linear-gradient(145deg,#120a2e,#2d1b69)"><div class="vphi"><div class="vphi-brand">HAYATI</div><div class="vphi-name">Pro Ultra 15K — Box of 5</div><div class="vphi-puffs">15,000 PUFFS</div></div><span class="bdg bnew">New</span><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Hayati</div><div class="pn">Pro Ultra 15K — Box of 5</div><div class="ps">★★★★★<span>(834)</span></div><div class="pf"><div class="pp"><strong>£71</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Crystal Pro" data-type="Disposable Vapes" data-puffs="10000" data-price="10.79"><div class="piw" style="background:linear-gradient(145deg,#002040,#004060)"><div class="vphi"><div class="vphi-brand">CRYSTAL PRO</div><div class="vphi-name">CP 10K Vape Kit</div><div class="vphi-puffs">10,000 PUFFS</div></div><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Crystal Pro</div><div class="pn">CP 10K Vape Kit</div><div class="ps">★★★★★<span>(612)</span></div><div class="pf"><div class="pp"><strong>£10</strong>.79</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Al Fakher" data-type="Disposable Vapes" data-puffs="30000" data-price="15.59"><div class="piw" style="background:linear-gradient(145deg,#2d1a00,#5a3800)"><div class="vphi"><div class="vphi-brand">AL FAKHER</div><div class="vphi-name">Crown Bar 30K Hypermax</div><div class="vphi-puffs">30,000 PUFFS</div></div><span class="bdg bhot">Best Seller</span><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Al Fakher</div><div class="pn">Crown Bar 30K Hypermax</div><div class="ps">★★★★★<span>(928)</span></div><div class="pf"><div class="pp"><strong>£15</strong>.59</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="IVG" data-type="Disposable Vapes" data-puffs="2400" data-price="8.39"><div class="piw" style="background:linear-gradient(145deg,#0d1b2a,#1e3a5f)"><div class="vphi"><div class="vphi-brand">IVG</div><div class="vphi-name">2400 Prefilled Pod Kit</div><div class="vphi-puffs">2,400 PUFFS</div></div><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">IVG</div><div class="pn">2400 Prefilled Pod Kit</div><div class="ps">★★★★☆<span>(445)</span></div><div class="pf"><div class="pp"><strong>£8</strong>.39</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Lost Mary" data-type="Disposable Vapes" data-puffs="6000" data-price="11.99"><div class="piw" style="background:linear-gradient(145deg,#2d0a2e,#880e4f)"><div class="vphi"><div class="vphi-brand">LOST MARY</div><div class="vphi-name">BM6000 Prefilled Pod Kit</div><div class="vphi-puffs">6,000 PUFFS</div></div><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Lost Mary</div><div class="pn">BM6000 Prefilled Pod Kit</div><div class="ps">★★★★★<span>(1,089)</span></div><div class="pf"><div class="pp"><strong>£11</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Pyne Pod" data-type="Disposable Vapes" data-puffs="10000" data-price="47.99"><div class="piw" style="background:linear-gradient(145deg,#0d2010,#1b5e20)"><div class="vphi"><div class="vphi-brand">PYNE POD</div><div class="vphi-name">Click 10K — Box of 5</div><div class="vphi-puffs">10,000 PUFFS</div></div><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Pyne Pod</div><div class="pn">Click 10K — Box of 5</div><div class="ps">★★★★★<span>(563)</span></div><div class="pf"><div class="pp"><strong>£47</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Relx" data-type="Disposable Vapes" data-puffs="12000" data-price="39.59"><div class="piw" style="background:linear-gradient(145deg,#1a1a1a,#333333)"><div class="vphi"><div class="vphi-brand">RELX</div><div class="vphi-name">12K Ultra Pod — Box of 5</div><div class="vphi-puffs">12,000 PUFFS</div></div><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Relx</div><div class="pn">12K Ultra Pod — Box of 5</div><div class="ps">★★★★☆<span>(387)</span></div><div class="pf"><div class="pp"><strong>£39</strong>.59</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="IVG" data-type="Disposable Vapes" data-puffs="10000" data-price="47.99"><div class="piw" style="background:linear-gradient(145deg,#0a0f1e,#1a2744)"><div class="vphi"><div class="vphi-brand">IVG</div><div class="vphi-name">Pro 10K — Box of 5</div><div class="vphi-puffs">10,000 PUFFS</div></div><span class="bdg bhot">Hot</span><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">IVG</div><div class="pn">Pro 10K — Box of 5</div><div class="ps">★★★★★<span>(721)</span></div><div class="pf"><div class="pp"><strong>£47</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Lost Mary" data-type="Disposable Vapes" data-puffs="15000" data-price="71.99"><div class="piw" style="background:linear-gradient(145deg,#1f0a1f,#550a35)"><div class="vphi"><div class="vphi-brand">LOST MARY</div><div class="vphi-name">Nera 15K — Box of 5</div><div class="vphi-puffs">15,000 PUFFS</div></div><span class="bdg bnew">New</span><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Lost Mary</div><div class="pn">Nera 15K — Box of 5</div><div class="ps">★★★★★<span>(456)</span></div><div class="pf"><div class="pp"><strong>£71</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Crystal Prime" data-type="Disposable Vapes" data-puffs="10000" data-price="10.79"><div class="piw" style="background:linear-gradient(145deg,#001040,#0d2080)"><div class="vphi"><div class="vphi-brand">CRYSTAL PRIME</div><div class="vphi-name">Aura Bar 10K</div><div class="vphi-puffs">10,000 PUFFS</div></div><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Crystal Prime</div><div class="pn">Aura Bar 10K</div><div class="ps">★★★★★<span>(389)</span></div><div class="pf"><div class="pp"><strong>£10</strong>.79</div><button class="bc">Add to Cart</button></div></div></div>
+<div class="pc" data-brand="Elf Bar" data-type="Disposable Vapes" data-puffs="50000" data-price="89.99"><div class="piw" style="background:linear-gradient(145deg,#002440,#003d6e)"><div class="vphi"><div class="vphi-brand">ELF BAR</div><div class="vphi-name">Plus 50K — Box of 5</div><div class="vphi-puffs">50,000 PUFFS</div></div><span class="bdg bnew">New</span><button class="wb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="pb"><div class="pbr">Elf Bar</div><div class="pn">Plus 50K — Box of 5</div><div class="ps">★★★★★<span>(298)</span></div><div class="pf"><div class="pp"><strong>£89</strong>.99</div><button class="bc">Add to Cart</button></div></div></div>
+    </div>
+  </div>
+</section>
 <!-- NEWSLETTER -->
 <div class="nl2"><div class="w"><div class="nli">
   <div class="nll">Newsletter</div>
@@ -939,37 +1014,61 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 
 <!-- ALL PRODUCTS PAGE -->
 <div id="page-products" hidden>
-  <div class="ck-hdr">
-    <div class="ck-hdr-inner">
-      <div class="ck-logo" onclick="location.hash='';return false">
-        <div class="ck-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        VapeVault
+  <div class="ap-page">
+    <div class="ap-breadcrumb"><a href="#" onclick="location.hash='';return false">Home</a> <span>/</span> All Products</div>
+    <div class="ap-topbar">
+      <div class="ap-sort-row">
+        <span class="ap-count-txt" id="ap-count"></span>
+        <button class="ap-mobbtn" id="ap-mobbtn" onclick="document.getElementById('ap-sidebar').classList.toggle('open')">&#9776; Filters</button>
+        <div class="ap-sort-wrap"><label>Sort by</label><select class="ap-sort" id="ap-sort"><option value="featured">Featured</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="name-asc">Name: A&ndash;Z</option><option value="puffs-desc">Puffs: High to Low</option></select></div>
       </div>
-      <div class="ck-back" onclick="location.hash='';return false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        Back to Home
-      </div>
+      <div class="ap-active-tags" id="ap-active-tags"></div>
     </div>
-  </div>
-  <div class="ap-body">
-    <div class="ap-hero">
-      <h1>All Products</h1>
-      <p>Browse our complete range of vapes, nic salts and pods</p>
+    <div class="ap-layout">
+      <aside class="ap-sidebar" id="ap-sidebar">
+        <div class="ap-sbar-hdr"><span>Filters</span><button onclick="clearAllFilters()" class="ap-clearall" id="ap-clearall">Clear all</button></div>
+        <div class="ap-fg">
+          <div class="ap-fg-lbl" onclick="this.parentElement.classList.toggle('closed')">Price Range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="ap-fopts">
+            <div class="ap-prange">
+              <div class="ap-pvals"><span id="ap-pmin">£0</span><span id="ap-pmax">£90</span></div>
+              <input type="range" class="ap-rng" id="ap-price-min" min="0" max="90" value="0" step="1">
+              <input type="range" class="ap-rng" id="ap-price-max" min="0" max="90" value="90" step="1">
+            </div>
+          </div>
+        </div>
+        <div class="ap-fg">
+          <div class="ap-fg-lbl" onclick="this.parentElement.classList.toggle('closed')">Brand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="ap-fopts ap-chk" id="ap-brand-opts"></div>
+        </div>
+        <div class="ap-fg">
+          <div class="ap-fg-lbl" onclick="this.parentElement.classList.toggle('closed')">Product Type <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="ap-fopts ap-chk" id="ap-type-opts">
+            <label><input type="checkbox" value="Disposable Vapes" onchange="filterChanged()"> Disposable Vapes</label>
+            <label><input type="checkbox" value="Best Sellers" onchange="filterChanged()"> Best Sellers</label>
+            <label><input type="checkbox" value="Nic Salts" onchange="filterChanged()"> Nic Salts</label>
+            <label><input type="checkbox" value="Pods" onchange="filterChanged()"> Pods</label>
+          </div>
+        </div>
+        <div class="ap-fg">
+          <div class="ap-fg-lbl" onclick="this.parentElement.classList.toggle('closed')">Puff Count <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="ap-fopts ap-chk" id="ap-puffs-opts">
+            <label><input type="checkbox" value="600-2400" onchange="filterChanged()"> 600&ndash;2,400 puffs</label>
+            <label><input type="checkbox" value="2400-6000" onchange="filterChanged()"> 2,400&ndash;6,000 puffs</label>
+            <label><input type="checkbox" value="6000-15000" onchange="filterChanged()"> 6,000&ndash;15,000 puffs</label>
+            <label><input type="checkbox" value="15000+" onchange="filterChanged()"> 15,000+ puffs</label>
+            <label><input type="checkbox" value="liquid" onchange="filterChanged()"> Nic Salts / Liquids</label>
+          </div>
+        </div>
+      </aside>
+      <main class="ap-main">
+        <div id="ap-grid"></div>
+        <div id="ap-empty" hidden style="padding:60px 0;text-align:center;color:var(--t2)">No products match your filters. <button onclick="clearAllFilters()" style="color:var(--g);background:none;border:none;cursor:pointer;text-decoration:underline">Clear all</button></div>
+      </main>
     </div>
-    <div class="ap-bar">
-      <div class="ap-tabs">
-        <button class="ap-tab on" data-filter="all">All Products</button>
-        <button class="ap-tab" data-filter="Best Sellers">Best Sellers</button>
-        <button class="ap-tab" data-filter="Nic Salts">Nic Salts</button>
-        <button class="ap-tab" data-filter="Pods">Pods</button>
-      </div>
-      <span class="ap-count" id="ap-count"></span>
-    </div>
-    <div id="ap-grid"></div>
   </div>
 </div>
 
-<!-- ══ PRODUCT DETAIL ══════════════════════════════════════════ -->
 <div id="page-product" hidden>
   <div class="ck-hdr">
     <div class="ck-hdr-inner">
@@ -1764,60 +1863,176 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 
   // ---- All products page ------------------------------------------------
   var PRODUCTS=[];
-  var AP_FILTER='all';
+  var FILTERS={brands:[],types:[],puffs:[],priceMin:0,priceMax:90};
+  var AP_SORT='featured';
 
   function collectProducts(){
     if(PRODUCTS.length)return;
-    var sectionMap={'strend':'Best Sellers','snics':'Nic Salts','spods':'Pods'};
+    var sectionMap={
+      'strend':'Best Sellers',
+      'snics':'Nic Salts',
+      'spods':'Pods',
+      'sbig':'Disposable Vapes'
+    };
     Object.keys(sectionMap).forEach(function(cls){
       var sec=document.querySelector('section.'+cls);
       if(!sec)return;
       sec.querySelectorAll('.pc').forEach(function(card){
-        PRODUCTS.push({cat:sectionMap[cls],html:card.outerHTML});
+        var brand=card.dataset.brand||(card.querySelector('.pbr')||{}).textContent||'';
+        var type=card.dataset.type||sectionMap[cls];
+        var puffs=parseInt(card.dataset.puffs)||0;
+        var price=parseFloat(card.dataset.price)||0;
+        PRODUCTS.push({cat:sectionMap[cls],brand:brand.trim(),type:type,puffs:puffs,price:price,html:card.outerHTML});
       });
     });
   }
 
-  function renderProducts(filter){
+  function buildBrandFilter(){
     collectProducts();
-    AP_FILTER=filter||'all';
+    var brands=[...new Set(PRODUCTS.map(function(p){return p.brand;}).filter(Boolean))].sort();
+    var el=document.getElementById('ap-brand-opts');
+    if(!el||el.children.length)return;
+    brands.forEach(function(b){
+      var lbl=document.createElement('label');
+      var chk=document.createElement('input');
+      chk.type='checkbox'; chk.value=b;
+      chk.onchange=filterChanged;
+      lbl.appendChild(chk);
+      lbl.appendChild(document.createTextNode(' '+b));
+      el.appendChild(lbl);
+    });
+  }
+
+  function filterChanged(){
+    FILTERS.brands=Array.from(document.querySelectorAll('#ap-brand-opts input:checked')).map(function(c){return c.value;});
+    FILTERS.types=Array.from(document.querySelectorAll('#ap-type-opts input:checked')).map(function(c){return c.value;});
+    FILTERS.puffs=Array.from(document.querySelectorAll('#ap-puffs-opts input:checked')).map(function(c){return c.value;});
+    var minEl=document.getElementById('ap-price-min');
+    var maxEl=document.getElementById('ap-price-max');
+    FILTERS.priceMin=minEl?parseInt(minEl.value):0;
+    FILTERS.priceMax=maxEl?parseInt(maxEl.value):90;
+    renderProducts();
+  }
+
+  function matchesPuffsFilter(puffs,types,filters){
+    if(!filters.puffs.length)return true;
+    return filters.puffs.some(function(range){
+      if(range==='liquid')return types==='Nic Salts'||types==='Pods';
+      if(range==='600-2400')return puffs>=600&&puffs<=2400;
+      if(range==='2400-6000')return puffs>2400&&puffs<=6000;
+      if(range==='6000-15000')return puffs>6000&&puffs<=15000;
+      if(range==='15000+')return puffs>15000;
+      return false;
+    });
+  }
+
+  function renderProducts(){
+    collectProducts();
+    buildBrandFilter();
+    AP_SORT=document.getElementById('ap-sort')? document.getElementById('ap-sort').value:'featured';
     var grid=document.getElementById('ap-grid');
     var countEl=document.getElementById('ap-count');
+    var emptyEl=document.getElementById('ap-empty');
     if(!grid)return;
-    var list=AP_FILTER==='all'?PRODUCTS:PRODUCTS.filter(function(p){return p.cat===AP_FILTER;});
+    var list=PRODUCTS.filter(function(p){
+      if(FILTERS.brands.length&&FILTERS.brands.indexOf(p.brand)<0)return false;
+      if(FILTERS.types.length&&FILTERS.types.indexOf(p.type)<0)return false;
+      if(!matchesPuffsFilter(p.puffs,p.type,FILTERS))return false;
+      if(p.price<FILTERS.priceMin||p.price>FILTERS.priceMax)return false;
+      return true;
+    });
+    if(AP_SORT==='price-asc')list.sort(function(a,b){return a.price-b.price;});
+    else if(AP_SORT==='price-desc')list.sort(function(a,b){return b.price-a.price;});
+    else if(AP_SORT==='name-asc')list.sort(function(a,b){return a.brand.localeCompare(b.brand);});
+    else if(AP_SORT==='puffs-desc')list.sort(function(a,b){return b.puffs-a.puffs;});
     grid.innerHTML=list.map(function(p){return p.html;}).join('');
     if(countEl)countEl.textContent=list.length+' product'+(list.length!==1?'s':'');
+    if(emptyEl)emptyEl.hidden=list.length>0;
+    updateActiveTags();
     grid.querySelectorAll('.bc').forEach(function(b){
       b.addEventListener('click',function(e){
         e.stopPropagation();
         var p=getProduct(b);
         var ex=cart.find(function(i){return i.name===p.name;});
         if(ex)ex.qty++;else cart.push({name:p.name,price:p.price,priceStr:p.priceStr,imgSrc:p.imgSrc||'',qty:1});
-        updateCount();renderCart();
-        var o=b.textContent;b.textContent='Added';
-        b.style.cssText='background:var(--g);color:#000;border-color:var(--g)';
-        setTimeout(function(){b.textContent=o;b.removeAttribute('style');},1400);
+        updateCount();saveCart();openCart();
       });
     });
     grid.querySelectorAll('.wb').forEach(function(b){
       b.addEventListener('click',function(e){
         e.stopPropagation();
-        var on=b.dataset.on==='1';b.dataset.on=on?'':'1';
-        b.style.color=on?'':'var(--g)';b.style.borderColor=on?'':'var(--bg2)';
+        b.classList.toggle('active');
       });
-    });
-    document.querySelectorAll('.ap-tab').forEach(function(t){
-      t.classList.toggle('on',t.dataset.filter===AP_FILTER);
     });
   }
 
-  document.addEventListener('click',function(e){
-    var tab=e.target.closest('.ap-tab');
-    var pg=document.getElementById('page-products');
-    if(tab&&pg&&!pg.hidden)renderProducts(tab.dataset.filter);
+  function updateActiveTags(){
+    var container=document.getElementById('ap-active-tags');
+    if(!container)return;
+    container.innerHTML='';
+    var addTag=function(label,clearFn){
+      var t=document.createElement('span');
+      t.className='ap-tag';
+      t.innerHTML=label+' <button onclick="'+clearFn+'">&#10005;</button>';
+      container.appendChild(t);
+    };
+    FILTERS.brands.forEach(function(b){addTag(b,'removeBrandFilter(&quot;'+b+'&quot;)');});
+    FILTERS.types.forEach(function(t){addTag(t,'removeTypeFilter(&quot;'+t+'&quot;)');});
+    FILTERS.puffs.forEach(function(p){addTag(p.replace('-','-')+' puffs','removePuffsFilter(&quot;'+p+'&quot;)');});
+    if(FILTERS.priceMin>0||FILTERS.priceMax<90)addTag('£'+FILTERS.priceMin+'-£'+FILTERS.priceMax,'resetPriceFilter()');
+  }
+
+  function removeBrandFilter(b){
+    var el=document.querySelector('#ap-brand-opts input[value="'+b+'"]');
+    if(el){el.checked=false;}
+    filterChanged();
+  }
+  function removeTypeFilter(t){
+    var el=document.querySelector('#ap-type-opts input[value="'+t+'"]');
+    if(el){el.checked=false;}
+    filterChanged();
+  }
+  function removePuffsFilter(p){
+    var el=document.querySelector('#ap-puffs-opts input[value="'+p+'"]');
+    if(el){el.checked=false;}
+    filterChanged();
+  }
+  function resetPriceFilter(){
+    var mn=document.getElementById('ap-price-min');
+    var mx=document.getElementById('ap-price-max');
+    if(mn)mn.value=0; if(mx)mx.value=90;
+    updatePriceDisplay();
+    filterChanged();
+  }
+  function clearAllFilters(){
+    document.querySelectorAll('#ap-brand-opts input,#ap-type-opts input,#ap-puffs-opts input').forEach(function(c){c.checked=false;});
+    resetPriceFilter();
+  }
+  function updatePriceDisplay(){
+    var mn=parseInt((document.getElementById('ap-price-min')||{}).value||0);
+    var mx=parseInt((document.getElementById('ap-price-max')||{}).value||90);
+    var pmn=document.getElementById('ap-pmin');
+    var pmx=document.getElementById('ap-pmax');
+    if(pmn)pmn.textContent='£'+mn;
+    if(pmx)pmx.textContent='£'+mx;
+  }
+
+  document.addEventListener('change',function(e){
+    if(e.target.id==='ap-price-min'||e.target.id==='ap-price-max'){
+      var mn=parseInt(document.getElementById('ap-price-min').value);
+      var mx=parseInt(document.getElementById('ap-price-max').value);
+      if(mn>mx){if(e.target.id==='ap-price-min')document.getElementById('ap-price-min').value=mx;else document.getElementById('ap-price-max').value=mn;}
+      updatePriceDisplay();
+      filterChanged();
+    }
+    if(e.target.id==='ap-sort'){AP_SORT=e.target.value;renderProducts();}
   });
 
-  // Page router
+  document.addEventListener('input',function(e){
+    if(e.target.id==='ap-price-min'||e.target.id==='ap-price-max'){updatePriceDisplay();}
+  });
+
+// Page router
   var PAGE_HASHES={
     'main':     function(h){return !h||h===''||h==='#'},
     'checkout': function(h){return h==='#checkout'},
@@ -1845,7 +2060,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     });
     window.scrollTo(0,0);
     if(h==='#checkout')renderCheckout();
-    if(h==='#all-products')renderProducts(AP_FILTER);
+    if(h==='#all-products'){buildBrandFilter();renderProducts();}
     if(h==='#confirmed'){
       var n=Math.floor(Math.random()*90000)+10000;
       var el=document.getElementById('conf-ref');
@@ -1904,6 +2119,17 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     });
   });
 
+
+  // Expose filter functions to global scope (called from inline HTML onchange/onclick)
+  window.filterChanged=filterChanged;
+  window.clearAllFilters=clearAllFilters;
+  window.removeBrandFilter=removeBrandFilter;
+  window.removeTypeFilter=removeTypeFilter;
+  window.removePuffsFilter=removePuffsFilter;
+  window.resetPriceFilter=resetPriceFilter;
+  window.updatePriceDisplay=updatePriceDisplay;
+  window.buildBrandFilter=buildBrandFilter;
+  window.renderProducts=renderProducts;
 })();
 </script>
 
