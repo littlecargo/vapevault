@@ -254,8 +254,9 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 @media(max-width:600px){#ap-grid{grid-template-columns:repeat(2,1fr)}.ap-bar{flex-direction:column;align-items:flex-start}}
 /* CART ITEM THUMBNAIL */
 .ctw{display:flex;align-items:flex-start;gap:12px;flex:1;min-width:0}
-.cthi{width:52px;height:52px;flex-shrink:0;background:#F0EDE6;overflow:hidden;border:1px solid rgba(0,0,0,0.08)}
-.cthi img{width:100%;height:100%;object-fit:contain}
+.cthi{width:60px;height:60px;flex-shrink:0;background:var(--bg2);overflow:hidden;border:1px solid var(--b);border-radius:4px;flex-shrink:0}
+.cthi img{width:100%;height:100%;object-fit:contain;padding:4px}
+.cit-flav{font-size:.75rem;color:var(--g);font-weight:700;letter-spacing:.04em;margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* CHECKOUT PAGE */
 #page-checkout,#page-confirmed{background:var(--bg);min-height:100vh}
@@ -348,9 +349,9 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 #cart-items{flex:1;overflow-y:auto;padding:0 24px;display:flex;flex-direction:column}
 #cart-items::-webkit-scrollbar{width:4px}
 #cart-items::-webkit-scrollbar-thumb{background:var(--b)}
-.ci{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--b)}
+.ci{display:flex!important;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--b);width:100%!important;height:auto!important;min-height:0!important}
 .cin{flex:1;min-width:0}
-.cit{font-size:13px;color:var(--t);font-weight:500;line-height:1.4;margin-bottom:10px}
+.cit{font-size:13px;color:var(--t);font-weight:600;line-height:1.35;margin-bottom:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .ciq{display:flex;align-items:center;gap:0;border:1px solid var(--b);width:fit-content}
 .cqb{background:none;border:none;color:var(--tm);width:30px;height:30px;font-size:16px;line-height:1;transition:color .2s;padding:0;cursor:pointer}
 .cqb:hover{color:var(--g)}
@@ -695,8 +696,14 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .pd-bread span{color:var(--b2)}
 .pd-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
 .pd-img-wrap{position:sticky;top:80px}
-.pd-img-main{aspect-ratio:1/1.1;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.pd-img-main img{width:100%;height:100%;object-fit:contain;padding:24px}
+.pd-img-main{aspect-ratio:1/1.05;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;transition:background .45s ease}
+.pd-img-main img,.pd-product-img{max-width:72%;max-height:68%;width:auto;height:auto;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,.55));image-rendering:auto}
+.pd-gradient-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:32px;text-align:center;position:relative;z-index:1}
+.pd-img-flav{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.13);color:#fff;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap;opacity:0;transition:opacity .3s;z-index:2;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+.pd-img-flav.vis{opacity:1}
+.pd-img-thumbs{display:flex;gap:8px;margin-top:14px}
+.pd-img-thumb{width:60px;height:60px;border:2px solid var(--b);border-radius:4px;overflow:hidden;cursor:pointer;transition:border-color .15s;background:var(--s1);display:flex;align-items:center;justify-content:center}
+.pd-img-thumb.sel,.pd-img-thumb:hover{border-color:var(--g)}
 .pd-brand-lbl{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
 .pd-name{font-size:1.6rem;font-weight:800;line-height:1.25;margin-bottom:10px}
 .pd-stars-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
@@ -1783,8 +1790,12 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
         sum+=item.price*item.qty;
         var d=document.createElement('div');
         d.className='ci';
-        var th=item.imgSrc?'<div class="cthi"><img src="'+item.imgSrc+'" alt=""></div>':'';
-        d.innerHTML='<div class="ctw">'+th+'<div class="cin"><div class="cit">'+item.name+'</div><div class="ciq"><button class="cqb" data-i="'+i+'" data-d="-1">&#8722;</button><span>'+item.qty+'</span><button class="cqb" data-i="'+i+'" data-d="1">+</button></div></div></div><div class="cir"><div class="cip">'+item.priceStr+'</div><button class="crm" data-i="'+i+'">&times;</button></div>';
+        var parts=item.name.split('—');
+        var prdName=parts[0].trim();
+        var flavName=parts.length>1?parts.slice(1).join('—').trim():'';
+        var flavRow=flavName?'<div class="cit-flav">'+flavName+'</div>':'';
+        var th=item.imgSrc?'<div class="cthi"><img src="'+item.imgSrc+'" alt="'+prdName+'"></div>':'';
+        d.innerHTML='<div class="ctw">'+th+'<div class="cin"><div class="cit">'+prdName+'</div>'+flavRow+'<div class="ciq"><button class="cqb" data-i="'+i+'" data-d="-1">&#8722;</button><span>'+item.qty+'</span><button class="cqb" data-i="'+i+'" data-d="1">+</button></div></div></div><div class="cir"><div class="cip">'+item.priceStr+'</div><button class="crm" data-i="'+i+'">&times;</button></div>';
         list.appendChild(d);
       });
       total.innerHTML='<div class="ct-row"><span>Subtotal</span><strong>£'+sum.toFixed(2)+'</strong></div><button class="ct-checkout">Proceed to Checkout &#8594;</button>';
@@ -2146,6 +2157,46 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   /* ── PRODUCT DETAIL ───────────────────────────────────── */
   var CURRENT_PRODUCT=null,CURRENT_FLAVOUR=null,CURRENT_QTY=1;
 
+  var FLAVOUR_COLORS={
+    'Blueberry':'linear-gradient(145deg,#120a2e,#2a1472)',
+    'Blueberry Ice':'linear-gradient(145deg,#0a1430,#122a6e)',
+    'Blueberry Sour Raspberry':'linear-gradient(145deg,#120a2e,#2a1472)',
+    'Blueberry Raspberry':'linear-gradient(145deg,#1a0a2e,#3a1272)',
+    'Cherry Ice':'linear-gradient(145deg,#2e0a12,#720a1a)',
+    'Cherry':'linear-gradient(145deg,#2e0a12,#720a1a)',
+    'Cherry Peach Lemonade':'linear-gradient(145deg,#2e1210,#72301a)',
+    'Mango Ice':'linear-gradient(145deg,#2e1a04,#724a04)',
+    'Mango':'linear-gradient(145deg,#2e1a04,#724a04)',
+    'Mango Passion Fruit':'linear-gradient(145deg,#2e1a04,#6e4a04)',
+    'Triple Mango':'linear-gradient(145deg,#2e1800,#6e4200)',
+    'Strawberry Ice':'linear-gradient(145deg,#2e0a18,#72142e)',
+    'Strawberry':'linear-gradient(145deg,#2e0a18,#72142e)',
+    'Strawberry Mango':'linear-gradient(145deg,#2e0a14,#6e1a24)',
+    'Strawberry Watermelon':'linear-gradient(145deg,#2e0e10,#7e1a1a)',
+    'Strawberry Kiwi':'linear-gradient(145deg,#2e0e10,#1e5e14)',
+    'Watermelon Ice':'linear-gradient(145deg,#0e2808,#1e6612)',
+    'Watermelon':'linear-gradient(145deg,#0e2808,#1e6612)',
+    'Grape':'linear-gradient(145deg,#1a0828,#4a0e72)',
+    'Grape Ice':'linear-gradient(145deg,#1a0828,#4a0e72)',
+    'Peach Ice':'linear-gradient(145deg,#2e1a08,#7a4a14)',
+    'Peach':'linear-gradient(145deg,#2e1a08,#7a4a14)',
+    'Pink Lemonade':'linear-gradient(145deg,#2e0820,#7a1458)',
+    'Blue Razz':'linear-gradient(145deg,#080e2e,#121e7a)',
+    'Blue Razz Ice':'linear-gradient(145deg,#080e2e,#121e7a)',
+    'Spearmint':'linear-gradient(145deg,#083016,#107e30)',
+    'Classic Mint':'linear-gradient(145deg,#083016,#107e30)',
+    'Lemon Ice':'linear-gradient(145deg,#1e1e06,#5e5e08)',
+    'Lemon Lime':'linear-gradient(145deg,#122008,#2a5c08)',
+    'Cola Ice':'linear-gradient(145deg,#1a0a0a,#3a1414)',
+    'Double Apple':'linear-gradient(145deg,#0e2808,#206614)',
+    'Lychee Ice':'linear-gradient(145deg,#280818,#681434)',
+    'Pineapple Ice':'linear-gradient(145deg,#1e1e08,#4e4e08)',
+    'Passion Fruit':'linear-gradient(145deg,#1e0820,#5e1264)',
+    'Apple Peach':'linear-gradient(145deg,#0c2208,#4a1a08)',
+    'Tropical Mango':'linear-gradient(145deg,#1e1004,#5e3804)',
+    'Fruit Tea':'linear-gradient(145deg,#1a0c04,#5a2c10)',
+    'Classic Tobacco':'linear-gradient(145deg,#1e1208,#4a2c08)'
+  };
   var BRAND_FLAVORS={
     'Hayati':['Blueberry Ice','Cherry Ice','Mango Ice','Strawberry Watermelon','Grape','Peach Ice','Watermelon Ice','Cola Ice','Spearmint','Pink Lemonade','Lychee Ice','Pineapple Ice'],
     'Al Fakher':['Double Apple','Blueberry Mint','Strawberry Ice','Lemon Ice','Watermelon Ice','Cherry Ice','Mango Ice','Peach Ice','Cola Ice','Grape Ice'],
@@ -2233,7 +2284,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     if(!p){location.hash='#all-products';return;}
     var flavs=BRAND_FLAVORS[p.brand]||['Original'];
     var grad=p.gradient||BRAND_BG['default'];
-    var imgHtml=p.imgSrc?'<img src="'+p.imgSrc+'" alt="'+p.name+'" style="width:100%;height:100%;object-fit:contain;padding:16px">':'<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:24px;gap:10px"><div class="vphi-brand">'+p.brand.toUpperCase()+'</div><div class="vphi-name">'+p.name+'</div>'+(p.puffs>0?'<div class="vphi-puffs">'+p.puffs.toLocaleString()+' PUFFS</div>':'')+' </div>';
+    var imgHtml=p.imgSrc?'<img src="'+p.imgSrc+'" alt="'+p.name+'" class="pd-product-img">':'<div class="pd-gradient-inner"><div class="vphi-brand">'+p.brand.toUpperCase()+'</div><div class="vphi-name">'+p.name+'</div>'+(p.puffs>0?'<div class="vphi-puffs">'+p.puffs.toLocaleString()+' PUFFS</div>':'')+' </div>';
     var pArr=p.price.toFixed(2).split('.');
     var puffsHtml=p.puffs>0?'<span class="pd-puffs-pill">&#128168; '+p.puffs.toLocaleString()+' Puffs</span>':'';
     var flavHtml=flavs.map(function(f){return'<button class="pd-flav" onclick="selectFlavour(this,\''+f.replace(/'/g,"\\'")+'\')" type="button">'+f+'</button>';}).join('');
@@ -2241,7 +2292,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     page.innerHTML='<div class="pd-page">'
       +'<nav class="pd-bread"><a href="#" onclick="location.hash=\'\';return false">Home</a><span>/</span><a href="#all-products">All Products</a><span>/</span>'+p.name+'</nav>'
       +'<div class="pd-layout">'
-        +'<div class="pd-img-wrap"><div class="pd-img-main" style="background:'+grad+'">'+imgHtml+'</div></div>'
+        +'<div class="pd-img-wrap"><div class="pd-img-main" style="background:'+grad+'">'+imgHtml+'<div class="pd-img-flav" id="pd-img-flav"></div></div></div>'
         +'<div class="pd-info">'
           +'<div class="pd-brand-lbl">'+p.brand+'</div>'
           +'<h1 class="pd-name">'+p.name+'</h1>'
@@ -2276,6 +2327,13 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     CURRENT_FLAVOUR=flavour;
     var el=document.getElementById('pd-sel-flav');
     if(el)el.textContent='— '+flavour;
+    var imgMain=document.querySelector('.pd-img-main');
+    if(imgMain&&CURRENT_PRODUCT){
+      var flavGrad=FLAVOUR_COLORS[flavour]||BRAND_BG[CURRENT_PRODUCT.brand]||BRAND_BG['default'];
+      imgMain.style.background=flavGrad;
+    }
+    var overlay=document.getElementById('pd-img-flav');
+    if(overlay){overlay.textContent=flavour;overlay.classList.add('vis');}
   }
 
   function changeQty(d){
